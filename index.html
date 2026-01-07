@@ -5,117 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANTsX | Medical Imaging Intelligence</title>
     <style>
-        :root { --link-color: #0056b3; --text-color: #333; --heading-color: #000; }
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text-color); max-width: 900px; margin: 0 auto; padding: 40px 20px; background-color: #fff; }
-        
-        header { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
-        h1 { font-size: 2.5rem; margin: 0; color: var(--heading-color); }
-        .tagline { font-size: 1.2rem; color: #666; font-style: italic; margin-top: 5px; }
-        
-        .contact-info { margin-top: 15px; font-size: 0.95rem; }
-        a { color: var(--link-color); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        section { margin-bottom: 40px; }
-        h2 { border-bottom: 1px solid #eee; padding-bottom: 5px; color: var(--heading-color); font-size: 1.5rem; }
-
-        .mission-box { background: #f9f9f9; padding: 20px; border-left: 5px solid #333; margin: 20px 0; }
-        .pillar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 10px; }
-        .pillar { font-weight: bold; border-right: 1px solid #ddd; }
-
+        :root { --link-color: #0056b3; --text-color: #333; --heading-color: #000; --accent: #f4f4f4; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text-color); max-width: 900px; margin: 0 auto; padding: 60px 20px; background-color: #fff; }
+        header { border-bottom: 3px solid #000; padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { font-size: 2.8rem; margin: 0; letter-spacing: -1px; color: var(--heading-color); }
+        .tagline { font-size: 1.3rem; color: #555; margin-top: 5px; font-weight: 300; }
+        .contact-info { margin-top: 20px; font-size: 0.95rem; }
+        a { color: var(--link-color); text-decoration: none; border-bottom: 1px solid transparent; transition: border 0.2s; }
+        a:hover { border-bottom: 1px solid var(--link-color); }
+        section { margin-bottom: 50px; }
+        h2 { border-bottom: 1px solid #eee; padding-bottom: 10px; color: var(--heading-color); font-size: 1.6rem; text-transform: uppercase; letter-spacing: 1px; }
+        .mission-box { background: var(--accent); padding: 25px; border-left: 5px solid #000; margin: 30px 0; font-size: 1.1rem; text-align: center; }
+        .mission-box strong { letter-spacing: 2px; }
         ul.publications { list-style: none; padding: 0; }
-        ul.publications li { margin-bottom: 15px; padding-left: 10px; border-left: 3px solid #eee; }
-        .pub-title { font-weight: bold; display: block; }
-        .pub-meta { font-size: 0.9rem; color: #555; }
-
-        .btn { display: inline-block; background: #333; color: #fff !important; padding: 8px 16px; border-radius: 4px; margin-top: 10px; font-size: 0.9rem; }
-        
-        @media (max-width: 600px) { .pillar-grid { grid-template-columns: 1fr; } }
+        ul.publications li { margin-bottom: 20px; padding-left: 15px; border-left: 2px solid #ddd; }
+        .pub-title { font-weight: bold; display: block; color: #111; line-height: 1.3; }
+        .pub-meta { font-size: 0.85rem; color: #666; text-transform: uppercase; margin-top: 4px; display: block; }
+        .pub-link { font-size: 0.85rem; font-weight: bold; }
+        footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.8rem; color: #888; }
+        @media (max-width: 600px) { h1 { font-size: 2rem; } }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>ANTsX</h1>
-    <div class="tagline">Delivering Medical Imaging Intelligence</div>
+    <h1>ANTsX Inc.</h1>
+    <div class="tagline">Industrializing Medical Imaging Intelligence</div>
     <div class="contact-info">
-        <strong>Contact:</strong> <a href="mailto:ANTsX@ANTsX.com">ANTsX@ANTsX.com</a> | 
-        <strong>Open Source:</strong> <a href="https://github.com/ANTsX/" target="_blank">GitHub/ANTsX</a>
+        <strong>Inquiries:</strong> <a href="mailto:ANTsX@ANTsX.com">ANTsX@ANTsX.com</a> |
+        <strong>Ecosystem:</strong> <a href="https://github.com/ANTsX/" target="_blank">Open Source Hub</a>
     </div>
 </header>
 
 <section id="about">
-    <p><strong>ANTsX</strong> specializes in the commercialization of the industry-standard ANTsX open-source medical imaging platform. We bridge the gap between cutting-edge computational research and enterprise-grade deployment.</p>
-    
+    <p><strong>ANTsX Inc.</strong> provides enterprise-grade commercialization and support for the industry-standard ANTsX medical imaging ecosystem. We bridge the gap between high-fidelity computational research and scalable clinical deployment.</p>
+
     <div class="mission-box">
-        <strong>Quality — Accountability — Stability — Scale</strong>
+        <strong>QUALITY &bull; ACCOUNTABILITY &bull; STABILITY &bull; SCALE</strong>
     </div>
 
-    <p>Our core offering combines <strong>SaaS delivery</strong> with <strong>Analysis-aware Expert QA/QC</strong>. We leverage deep domain knowledge of lifespan brain health—spanning from birth and occupational exposure to aging and biomarker-confirmed neurodegenerative diseases.</p>
+    <p>Our platform integrates high-throughput <strong>SaaS delivery</strong> with <strong>analysis-aware expert QA/QC</strong>. We provide domain-specific intelligence for lifespan brain health—from neonatal development and occupational exposure to aging and biomarker-confirmed neurodegenerative disease states.</p>
 </section>
 
 <section id="expertise">
-    <h2>Specialized Expertise</h2>
+    <h2>Core Capabilities</h2>
     <ul>
-        <li><strong>Multi-view Integration:</strong> Advanced fusion of disparate imaging and clinical data streams.</li>
-        <li><strong>Clinical Translation:</strong> Expert navigation of biomarker-confirmed disease states and treatment monitoring.</li>
-        <li><strong>Scalable Infrastructure:</strong> Robust pipelines designed for high-throughput clinical and research environments.</li>
+        <li><strong>Multi-view Integration:</strong> Synthesizing disparate imaging modalities with longitudinal clinical data streams.</li>
+        <li><strong>Clinical Translation:</strong> Expert navigation of complex biomarkers for disease tracking and treatment response.</li>
+        <li><strong>Reliable Infrastructure:</strong> Robust, reproducible pipelines designed for the rigors of clinical trials and high-volume research.</li>
     </ul>
 </section>
 
 <section id="publications">
-    <h2>Selected Research & Publications</h2>
+    <h2>Selected Research &amp; Evidence</h2>
     <ul class="publications">
+
         <li>
-            <span class="pub-title">Deep Learning-Based Multimodal Neuropathological Biomarker Characterization</span>
+            <span class="pub-title">Mapping cognition and performance to joint anatomical and functional substrates</span>
             <span class="pub-meta">medRxiv (2025)</span>
-            <a href="https://www.medrxiv.org/content/10.1101/2025.09.27.25336706v1" target="_blank">[Paper]</a>
+            <a class="pub-link" href="https://www.medrxiv.org/content/10.1101/2025.09.27.25336706v1" target="_blank">View Paper &rarr;</a>
         </li>
+
         <li>
-            <span class="pub-title">Advances in Computational Neuroimaging for Lifespan Health</span>
+            <span class="pub-title">Evaluation of imaging data phenotypes for Parkinson's Disease</span>
             <span class="pub-meta">medRxiv (2024)</span>
-            <a href="https://www.medrxiv.org/content/10.1101/2024.09.23.24313179v1" target="_blank">[Paper]</a>
+            <a class="pub-link" href="https://www.medrxiv.org/content/10.1101/2024.09.23.24313179v1" target="_blank">View Paper &rarr;</a>
         </li>
+
         <li>
-            <span class="pub-title">Large-scale Integration of Brain Biomarkers</span>
-            <span class="pub-meta">arXiv (2511.06425)</span>
-            <a href="https://arxiv.org/html/2511.06425" target="_blank">[Paper]</a>
+            <span class="pub-title">Non-Negative Stiefel Approximating Flow for Interpretable Embeddings</span>
+            <span class="pub-meta">arXiv (stat.ML, 2511.06425)</span>
+            <a class="pub-link" href="https://arxiv.org/abs/2511.06425" target="_blank">View Paper &rarr;</a>
         </li>
+
         <li>
-            <span class="pub-title">The ANTsX Ecosystem for Quantitative Biological Imaging</span>
-            <span class="pub-meta">PMC8079440</span>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8079440/" target="_blank">[Article]</a>
+            <span class="pub-title">The ANTsX Ecosystem for Quantitative Biological &amp; Medical Imaging</span>
+            <span class="pub-meta">Scientific Reports (2021)</span>
+            <a class="pub-link" href="https://www.nature.com/articles/s41598-021-87564-6" target="_blank">View Article &rarr;</a>
         </li>
+
         <li>
-            <span class="pub-title">PET/MRI Integration and Expert QA in Neurodegeneration</span>
+            <span class="pub-title">PET/MRI Integration &amp; Quality Assurance in Amyloid Imaging</span>
             <span class="pub-meta">Journal of Nuclear Medicine</span>
-            <a href="https://jnm.snmjournals.org/content/60/1/100" target="_blank">[Source]</a>
+            <a class="pub-link" href="https://jnm.snmjournals.org/content/60/1/100" target="_blank">View Source &rarr;</a>
         </li>
+
         <li>
-            <span class="pub-title">Computational Analysis of Occupational Exposure Effects</span>
-            <span class="pub-meta">Nature Scientific Reports (2024)</span>
-            <a href="https://www.nature.com/articles/s41598-024-59440-6" target="_blank">[Article]</a>
+            <span class="pub-title">Large-scale analytics for UK Biobank</span>
+            <span class="pub-meta">Nature Scientific Reports</span>
+            <a class="pub-link" href="https://www.nature.com/articles/s41598-024-59440-6" target="_blank">View Article &rarr;</a>
         </li>
+
         <li>
-            <span class="pub-title">Multi-atlas Segmentation and Normalization Strategies</span>
-            <span class="pub-meta">PubMed Central</span>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7703399/" target="_blank">[Article]</a>
+            <span class="pub-title">Multi-view Neuroimaging Signatures of Occupational Exposure Effects</span>
+            <span class="pub-meta">Journal of Neurotrauma</span>
+            <a class="pub-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7703399/" target="_blank">View Article &rarr;</a>
         </li>
+
         <li>
-            <span class="pub-title">Cortical Thickness and Structural Connectivity in Aging</span>
-            <span class="pub-meta">PubMed / Neuroimage</span>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/25977810/" target="_blank">[Link]</a>
+            <span class="pub-title">Multi-view pediatric neuroimaging</span>
+            <span class="pub-meta">Scientific Data</span>
+            <a class="pub-link" href="https://pubmed.ncbi.nlm.nih.gov/25977810/" target="_blank">View PubMed &rarr;</a>
         </li>
+
         <li>
-            <span class="pub-title">Deep Learning Applications in Brain Mapping</span>
-            <span class="pub-meta">PubMed / Medical Image Analysis</span>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/30471630/" target="_blank">[Link]</a>
+            <span class="pub-title">Amyloid-related longitudinal change in resting brain activity</span>
+            <span class="pub-meta">Neurobiology of Aging</span>
+            <a class="pub-link" href="https://pubmed.ncbi.nlm.nih.gov/30471630/" target="_blank">View PubMed &rarr;</a>
         </li>
+
     </ul>
 </section>
 
 <footer>
-    <p>&copy; 2026 ANTsX Inc. All rights reserved.</p>
+    <p>&copy; 2026 ANTsX Inc. | Quantifying Brain Health Through Imaging Intelligence.</p>
 </footer>
 
 </body>
