@@ -1,0 +1,82 @@
+/* ---------- Theme Variables ---------- */
+
+:root {
+    --bg: #ffffff;
+    --text: #222;
+    --heading: #000;
+    --link-bg: #fff3a0;     /* warm yellow highlight */
+    --link-text: #000;     /* ink on yellow */
+    --border: #ddd;
+}
+
+body.dark {
+    --bg: #000000;
+    --text: #e6e6e6;
+    --heading: #ffffff;
+    --link-bg: #3b1c5a;     /* deep purple highlight */
+    --link-text: #f5e663;   /* warm yellow ink */
+    --border: #333;
+}
+
+/* ---------- Base Layout ---------- */
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: var(--heading);
+}
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+}
+
+header {
+    border-bottom: 3px solid var(--heading);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    margin-top: 80px;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* ---------- Links ---------- */
+
+a {
+    color: var(--link-text);
+    background: var(--link-bg);
+    padding: 0 3px;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.85;
+}
+
+/* ---------- Utility ---------- */
+
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+}
+
