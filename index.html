@@ -1,47 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ANTsX Inc.</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>ANTsX Inc.</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <div class="toggle" onclick="document.body.classList.toggle('dark')">
-    toggle dark / light
+  toggle dark / light
 </div>
 
 <header>
-    <h1>ANTsX Inc.</h1>
+  <h1>ANTsX Inc.</h1>
 </header>
 
-<main>
-    <p>
-        We build imaging systems that hold up under scrutiny—
-        integrating data across modalities and time, translating biomarkers into practice,
-        enforcing quantitative quality standards, and scaling models without losing
-        interpretability or control.
-    </p>
+<main class="manifesto-container">
 
-    <p>
-        Our work is grounded in
-        <a href="long.html#quality">quality</a>,
-        <a href="long.html#accountability">accountability</a>,
-        <a href="long.html#stability">stability</a>, and
-        <a href="long.html#scale">scale</a>.
-    </p>
+  <!-- 1. QUALITY -->
+  <div class="thought-block" onclick="toggleThought(this)">
+    <div class="sentence-trigger">
+      We build imaging systems that enforce <a href="publications.html#ecosystem">quantitative quality standards</a>, ensuring biological signal is distinct from technical noise.
+      <span class="toggle-icon">[+]</span>
+    </div>
+    
+    <div class="expansion-content">
+      <p>
+        Quality is treated as a measurable property rather than a subjective judgment. We employ explicit quantitative metrics for data fidelity, algorithmic performance, and longitudinal consistency.
+      </p>
+      <p class="deep-link">
+        <a href="long.html#quality">Read more on Quality &rarr;</a>
+      </p>
+    </div>
+  </div>
 
-    <p>
-        <a href="long.html">More detail on our approach</a> ·
-        <a href="publications.html">Publications</a>
-    </p>
+  <!-- 2. ACCOUNTABILITY -->
+  <div class="thought-block" onclick="toggleThought(this)">
+    <div class="sentence-trigger">
+      We translate biomarkers into practice, establishing <a href="publications.html#clinical">accountability</a> where failures are detected, localized, and explained.
+      <span class="toggle-icon">[+]</span>
+    </div>
+    
+    <div class="expansion-content">
+      <p>
+        Accountability requires that analytical failures can be detected. Our pipelines are instrumented to support auditability, version tracking, and retrospective analysis, with explicit reporting of failure modes and uncertainty.
+      </p>
+      <p class="deep-link">
+        <a href="long.html#accountability">Read more on Accountability &rarr;</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- 3. STABILITY -->
+  <div class="thought-block" onclick="toggleThought(this)">
+    <div class="sentence-trigger">
+      We integrate data across modalities and time, engineering <a href="publications.html#cognition">stability</a> against the entropy of protocol drift.
+      <span class="toggle-icon">[+]</span>
+    </div>
+    
+    <div class="expansion-content">
+      <p>
+        Longitudinal and multi-site studies introduce unavoidable variability. We design methods that are robust to protocol drift, acquisition changes, and cohort expansion without requiring continual retraining.
+      </p>
+      <p class="deep-link">
+        <a href="long.html#stability">Read more on Stability &rarr;</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- 4. SCALE -->
+  <div class="thought-block" onclick="toggleThought(this)">
+    <div class="sentence-trigger">
+      We <a href="publications.html#scale">scale models</a> to populations without losing the interpretability or control required for individual care.
+      <span class="toggle-icon">[+]</span>
+    </div>
+    
+    <div class="expansion-content">
+      <p>
+        Scaling is not treated as a deployment concern alone. Methods must retain interpretability and quality guarantees as data volume and diversity increase, supported by our experience with population-scale datasets.
+      </p>
+      <p class="deep-link">
+        <a href="long.html#scale">Read more on Scale &rarr;</a>
+      </p>
+    </div>
+  </div>
+
 </main>
 
 <footer>
-    © 2026 ANTsX Inc.
+  © 2026 ANTsX Inc. · <a href="long.html">Approach</a> · <a href="publications.html">Publications</a>
 </footer>
+
+<script>
+  function toggleThought(element) {
+    // Toggle active class for animation
+    element.classList.toggle('active');
+
+    // Update the icon
+    const icon = element.querySelector('.toggle-icon');
+    if (element.classList.contains('active')) {
+      icon.innerText = "[-]";
+    } else {
+      icon.innerText = "[+]";
+    }
+  }
+
+  // Prevent link clicks from toggling the section
+  document.querySelectorAll('.sentence-trigger a, .expansion-content a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  });
+</script>
 
 </body>
 </html>
-

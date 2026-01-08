@@ -1,82 +1,161 @@
 /* ---------- Theme Variables ---------- */
 
 :root {
-    --bg: #ffffff;
-    --text: #222;
-    --heading: #000;
-    --link-bg: #fff3a0;     /* warm yellow highlight */
-    --link-text: #000;     /* ink on yellow */
-    --border: #ddd;
+  --bg: #ffffff;
+  --text: #222;
+  --heading: #000;
+  --link-bg: #fff3a0;  /* warm yellow highlight */
+  --link-text: #000;   /* ink on yellow */
+  --border: #ddd;
+  --dim-text: #666;    /* For non-highlighted trigger text */
 }
 
 body.dark {
-    --bg: #000000;
-    --text: #e6e6e6;
-    --heading: #ffffff;
-    --link-bg: #3b1c5a;     /* deep purple highlight */
-    --link-text: #f5e663;   /* warm yellow ink */
-    --border: #333;
+  --bg: #000000;
+  --text: #e6e6e6;
+  --heading: #ffffff;
+  --link-bg: #3b1c5a;  /* deep purple highlight */
+  --link-text: #f5e663; /* warm yellow ink */
+  --border: #333;
+  --dim-text: #aaa;
 }
 
 /* ---------- Base Layout ---------- */
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    line-height: 1.6;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
 
 h1, h2 {
-    color: var(--heading);
+  color: var(--heading);
 }
 
 h2 {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
 }
 
 header {
-    border-bottom: 3px solid var(--heading);
-    padding-bottom: 20px;
-    margin-bottom: 40px;
+  border-bottom: 3px solid var(--heading);
+  padding-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 footer {
-    border-top: 1px solid var(--border);
-    margin-top: 80px;
-    padding-top: 20px;
-    font-size: 0.8rem;
-    color: #888;
+  border-top: 1px solid var(--border);
+  margin-top: 80px;
+  padding-top: 20px;
+  font-size: 0.8rem;
+  color: #888;
 }
 
 /* ---------- Links ---------- */
 
 a {
-    color: var(--link-text);
-    background: var(--link-bg);
-    padding: 0 3px;
-    text-decoration: none;
+  color: var(--link-text);
+  background: var(--link-bg);
+  padding: 0 3px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {
-    opacity: 0.85;
+  opacity: 0.85;
 }
 
 /* ---------- Utility ---------- */
 
 .toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    border: 1px solid var(--border);
-    padding: 6px 10px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  background: var(--bg);
+  color: var(--text);
+  z-index: 100;
 }
 
+/* ---------- Interactive Manifesto (Index Page) ---------- */
+
+.manifesto-container {
+  max-width: 800px;
+  margin-top: 40px;
+}
+
+.thought-block {
+  margin-bottom: 2.5rem;
+  border-left: 3px solid transparent;
+  padding-left: 0;
+  transition: border-left-color 0.3s, padding-left 0.3s;
+}
+
+.thought-block.active {
+  border-left-color: var(--heading);
+  padding-left: 20px;
+}
+
+/* The clickable main sentence */
+.sentence-trigger {
+  font-size: 1.5rem;
+  font-weight: 300; /* Light Helvetica weight */
+  cursor: pointer;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.sentence-trigger:hover {
+  color: var(--heading);
+}
+
+/* The specific highlighted link within the sentence */
+.sentence-trigger a {
+  position: relative;
+  z-index: 10;
+  font-weight: 400; /* Slightly bolder than the sentence text */
+  background: var(--link-bg); /* Ensure it keeps your yellow/purple highlight */
+}
+
+/* The [+] icon */
+.toggle-icon {
+  font-size: 0.9rem;
+  color: var(--dim-text);
+  margin-left: 10px;
+  vertical-align: middle;
+  opacity: 0.5;
+  font-family: monospace;
+}
+
+/* The hidden detailed paragraph */
+.expansion-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s, margin-top 0.3s;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.thought-block.active .expansion-content {
+  max-height: 500px; /* High enough to fit content */
+  opacity: 1;
+  margin-top: 1.5rem;
+}
+
+.deep-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
