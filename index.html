@@ -8,7 +8,8 @@
 
 <body>
 
-<div class="toggle" onclick="document.body.classList.toggle('dark')">
+<!-- Replaced inline onclick with ID for robust JS handling -->
+<div class="toggle" id="theme-toggle">
   toggle dark / light
 </div>
 
@@ -19,7 +20,8 @@
 <main class="manifesto-container">
 
   <!-- 1. QUALITY -->
-  <div class="thought-block" onclick="toggleThought(this)">
+  <!-- Removed onclick attribute, added class for JS targeting -->
+  <div class="thought-block">
     <div class="sentence-trigger">
       We build imaging systems that enforce <a href="publications.html#ecosystem">quantitative quality standards</a>, ensuring biological signal is distinct from technical noise.
       <span class="toggle-icon">[+]</span>
@@ -36,7 +38,7 @@
   </div>
 
   <!-- 2. ACCOUNTABILITY -->
-  <div class="thought-block" onclick="toggleThought(this)">
+  <div class="thought-block">
     <div class="sentence-trigger">
       We translate biomarkers into practice, establishing <a href="publications.html#clinical">accountability</a> where failures are detected, localized, and explained.
       <span class="toggle-icon">[+]</span>
@@ -53,7 +55,7 @@
   </div>
 
   <!-- 3. STABILITY -->
-  <div class="thought-block" onclick="toggleThought(this)">
+  <div class="thought-block">
     <div class="sentence-trigger">
       We integrate data across modalities and time, engineering <a href="publications.html#cognition">stability</a> against the entropy of protocol drift.
       <span class="toggle-icon">[+]</span>
@@ -70,7 +72,7 @@
   </div>
 
   <!-- 4. SCALE -->
-  <div class="thought-block" onclick="toggleThought(this)">
+  <div class="thought-block">
     <div class="sentence-trigger">
       We <a href="publications.html#scale">scale models</a> to populations without losing the interpretability or control required for individual care.
       <span class="toggle-icon">[+]</span>
@@ -92,26 +94,46 @@
   © 2026 ANTsX Inc. · <a href="long.html">Approach</a> · <a href="publications.html">Publications</a>
 </footer>
 
+<!-- ROBUST JAVASCRIPT -->
 <script>
-  function toggleThought(element) {
-    // Toggle active class for animation
-    element.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', () => {
 
-    // Update the icon
-    const icon = element.querySelector('.toggle-icon');
-    if (element.classList.contains('active')) {
-      icon.innerText = "[-]";
-    } else {
-      icon.innerText = "[+]";
-    }
+  // 1. Handle Dark/Light Mode Toggle
+  const themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
   }
 
-  // Prevent link clicks from toggling the section
-  document.querySelectorAll('.sentence-trigger a, .expansion-content a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.stopPropagation();
+  // 2. Handle Expansion Blocks
+  const blocks = document.querySelectorAll('.thought-block');
+  
+  blocks.forEach(block => {
+    block.addEventListener('click', function(e) {
+      // Toggle active class
+      this.classList.toggle('active');
+      
+      // Update icon
+      const icon = this.querySelector('.toggle-icon');
+      if (this.classList.contains('active')) {
+        icon.innerText = "[-]";
+      } else {
+        icon.innerText = "[+]";
+      }
     });
   });
+
+  // 3. Stop links from triggering the expansion
+  // (We attach this to the anchor tags specifically)
+  const links = document.querySelectorAll('.sentence-trigger a, .expansion-content a');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevents the click from bubbling up to the block
+    });
+  });
+
+});
 </script>
 
 </body>
