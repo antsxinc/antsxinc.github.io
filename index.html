@@ -20,16 +20,15 @@
 <main class="manifesto-container">
 
   <!-- 1. QUALITY -->
-  <!-- Removed onclick attribute, added class for JS targeting -->
   <div class="thought-block">
     <div class="sentence-trigger">
-      We build imaging systems that enforce <a href="publications.html#ecosystem">quantitative quality standards</a>, ensuring biological signal is distinct from technical noise.
+      We build imaging systems that enforce <a href="publications.html#ecosystem">quantitative quality standards</a>, separating biological signal from technical noise by design.
       <span class="toggle-icon">[+]</span>
     </div>
     
     <div class="expansion-content">
       <p>
-        Quality is treated as a measurable property rather than a subjective judgment. We employ explicit quantitative metrics for data fidelity, algorithmic performance, and longitudinal consistency.
+        We treat quality as a measurable property rather than a subjective judgment. Our methods use explicit quantitative metrics for data fidelity, algorithmic performance, and longitudinal consistency, ensuring that learned representations remain biologically meaningful.
       </p>
       <p class="deep-link">
         <a href="long.html#quality">Read more on Quality &rarr;</a>
@@ -40,13 +39,13 @@
   <!-- 2. ACCOUNTABILITY -->
   <div class="thought-block">
     <div class="sentence-trigger">
-      We translate biomarkers into practice, establishing <a href="publications.html#clinical">accountability</a> where failures are detected, localized, and explained.
+      We translate biomarkers into practice, establishing <a href="publications.html#clinical">accountability</a> through models whose failures can be detected, localized, and explained.
       <span class="toggle-icon">[+]</span>
     </div>
     
     <div class="expansion-content">
       <p>
-        Accountability requires that analytical failures can be detected. Our pipelines are instrumented to support auditability, version tracking, and retrospective analysis, with explicit reporting of failure modes and uncertainty.
+        Accountability requires that analytical failures are not hidden. Our pipelines support auditability, version tracking, and retrospective analysis, with explicit reporting of uncertainty and failure modes rather than obscuring them behind black-box AI.
       </p>
       <p class="deep-link">
         <a href="long.html#accountability">Read more on Accountability &rarr;</a>
@@ -57,13 +56,13 @@
   <!-- 3. STABILITY -->
   <div class="thought-block">
     <div class="sentence-trigger">
-      We integrate data across modalities and time, engineering <a href="publications.html#cognition">stability</a> against the entropy of protocol drift.
+      We integrate data across modalities and time, engineering <a href="publications.html#cognition">stable interpretability</a> that resists protocol drift and cohort expansion.
       <span class="toggle-icon">[+]</span>
     </div>
     
     <div class="expansion-content">
       <p>
-        Longitudinal and multi-site studies introduce unavoidable variability. We design methods that are robust to protocol drift, acquisition changes, and cohort expansion without requiring continual retraining.
+        Longitudinal and multi-site studies introduce unavoidable variability. We design representations that remain anchored to biological and cognitive phenotypes across time, scanners, and cohorts—preserving interpretability without continual retraining.
       </p>
       <p class="deep-link">
         <a href="long.html#stability">Read more on Stability &rarr;</a>
@@ -74,16 +73,30 @@
   <!-- 4. SCALE -->
   <div class="thought-block">
     <div class="sentence-trigger">
-      We <a href="publications.html#scale">scale models</a> to populations without losing the interpretability or control required for individual care.
+      We <a href="publications.html#scale">scale</a> from individuals to populations without sacrificing interpretability or rigor.
       <span class="toggle-icon">[+]</span>
     </div>
     
     <div class="expansion-content">
       <p>
-        Scaling is not treated as a deployment concern alone. Methods must retain interpretability and quality guarantees as data volume and diversity increase, supported by our experience with population-scale datasets.
+        Scaling is treated as a core methodological requirement rather than a deployment afterthought. As data volume and heterogeneity increase, our methods preserve interpretability and quantitative performance guarantees. By using grounded machine learning and AI, we link mathematically rigorous representations directly to underlying biological phenotypes—maximizing scientific return for both participants and research teams.
       </p>
       <p class="deep-link">
         <a href="long.html#scale">Read more on Scale &rarr;</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- UNIFYING STATEMENT -->
+  <div class="thought-block active">
+    <div class="sentence-trigger">
+      Across all stages, we connect mathematics to biology.
+      <span class="toggle-icon">[-]</span>
+    </div>
+
+    <div class="expansion-content">
+      <p>
+        We ground machine learning and AI to connect mathematically rigorous representations to real biological phenotypes—ensuring quality, accountability, stability, and scale without compromise.
       </p>
     </div>
   </div>
@@ -111,10 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   blocks.forEach(block => {
     block.addEventListener('click', function(e) {
-      // Toggle active class
       this.classList.toggle('active');
-      
-      // Update icon
       const icon = this.querySelector('.toggle-icon');
       if (this.classList.contains('active')) {
         icon.innerText = "[-]";
@@ -125,11 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 3. Stop links from triggering the expansion
-  // (We attach this to the anchor tags specifically)
   const links = document.querySelectorAll('.sentence-trigger a, .expansion-content a');
   links.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevents the click from bubbling up to the block
+      e.stopPropagation();
     });
   });
 
