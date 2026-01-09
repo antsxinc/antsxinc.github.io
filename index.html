@@ -24,15 +24,16 @@
 
 <main class="manifesto-container">
 
+  <!-- 1. SEMANTIC INTERPRETATION -->
   <div class="thought-block">
     <div class="sentence-trigger">
-      We deliver <a href="long.html#interpretation">semantic image interpretation</a>, translating raw pixels into high-fidelity biological signal with surgical precision.
+      We deliver <a href="long.html#interpretation">semantic image interpretation</a> for brain imaging, translating raw pixels into high-fidelity biological signal.
       <span class="toggle-icon">[+]</span>
     </div>
-    
+
     <div class="expansion-content">
       <p>
-        Our platform doesn't just process images; it interprets them. By linking mathematically rigorous representations to biological phenotypes, we provide a deep semantic understanding of anatomy and function. This allows researchers to "squeeze the most out of data," identifying subtle biomarkers that traditional pipelines overlook—even in the presence of noise.
+        Our systems do not merely process images—they interpret them. By linking mathematically rigorous representations to underlying biological phenotypes, we extract meaningful structure from noisy, heterogeneous imaging data. This enables sensitive detection of subtle biomarkers that conventional pipelines often discard as variance.
       </p>
       <p class="deep-link">
         <a href="long.html#interpretation">Read more on Semantic Interpretation &rarr;</a>
@@ -40,15 +41,16 @@
     </div>
   </div>
 
+  <!-- 2. OPERATIONAL EFFICIENCY -->
   <div class="thought-block">
     <div class="sentence-trigger">
-      We prioritize <a href="long.html#efficiency">operational efficiency</a>, industrializing neuroimaging to deliver high-throughput results at a lower cost of discovery.
+      We prioritize <a href="long.html#efficiency">operational efficiency</a>, industrializing neuroimaging to increase throughput without sacrificing rigor.
       <span class="toggle-icon">[+]</span>
     </div>
-    
+
     <div class="expansion-content">
       <p>
-        Human experts are one of the most valuable resources in clinical trials. Our cloud-native infrastructure accelerates and standardizes expert review making the most of human effort and maximizing the "scientific yield" per scan.  This reduces the total cost of longitudinal studies without sacrificing the mathematical rigor of the underlying ANTsX ecosystem.
+        Human expertise is scarce and valuable in clinical research. Our cloud-native infrastructure standardizes and accelerates expert workflows, maximizing scientific yield per scan. By preserving the mathematical integrity of the ANTsX ecosystem while scaling execution, we reduce cost and time without compromising validity.
       </p>
       <p class="deep-link">
         <a href="long.html#efficiency">Read more on Speed & Efficiency &rarr;</a>
@@ -56,15 +58,16 @@
     </div>
   </div>
 
+  <!-- 3. ACCOUNTABILITY -->
   <div class="thought-block">
     <div class="sentence-trigger">
-      We establish <a href="long.html#accountability">accountability</a> through models whose outputs are grounded, explainable, and version-tracked for regulatory trust.
+      We establish <a href="long.html#accountability">accountability</a> through transparent models designed for audit, explanation, and regulatory trust.
       <span class="toggle-icon">[+]</span>
     </div>
-    
+
     <div class="expansion-content">
       <p>
-        Accountability requires that analytical failures are never hidden behind "black-box" AI. Our pipelines support auditability and retrospective analysis, providing explicit reporting of uncertainty and failure modes. This transparency ensures that learned representations remain biologically meaningful and defensible in clinical practice.
+        Accountability requires that failures are observable rather than obscured by black-box AI. Our pipelines are versioned, instrumented, and analysis-aware, with explicit reporting of uncertainty and failure modes. This transparency supports defensible decision-making in regulated and translational environments.
       </p>
       <p class="deep-link">
         <a href="long.html#accountability">Read more on Accountability &rarr;</a>
@@ -72,15 +75,16 @@
     </div>
   </div>
 
+  <!-- 4. SCALE & STABILITY -->
   <div class="thought-block">
     <div class="sentence-trigger">
-      We <a href="long.html#scale">scale insights</a> across modalities and time, engineering stable interpretability that resists protocol drift and cohort expansion.
+      We <a href="long.html#scale">scale insight</a> from individuals to populations while preserving interpretability across time and cohorts.
       <span class="toggle-icon">[+]</span>
     </div>
-    
+
     <div class="expansion-content">
       <p>
-        Longitudinal and multi-site studies introduce unavoidable variability. We design representations that remain anchored to biological phenotypes across different scanners and cohorts—preserving interpretability without continual retraining. This allows individual precision to scale to population-level rigor seamlessly.
+        Longitudinal and multi-site studies introduce unavoidable variability. We engineer representations that remain anchored to biological signal despite protocol drift, scanner upgrades, and cohort expansion. This allows individual-level precision to extend reliably to population-scale analysis.
       </p>
       <p class="deep-link">
         <a href="long.html#scale">Read more on Scale & Stability &rarr;</a>
@@ -88,6 +92,7 @@
     </div>
   </div>
 
+  <!-- UNIFYING STATEMENT -->
   <div class="thought-block active">
     <div class="sentence-trigger">
       Connecting mathematics to biology at scale.
@@ -96,7 +101,7 @@
 
     <div class="expansion-content">
       <p>
-        ANTsX Inc. delivers the intelligence to interpret, the speed to discover, and the rigor to trust. We maximize the ROI of medical imaging data through grounded machine learning and industrialized execution.
+        ANTsX Inc. provides the execution layer that turns rigorous quantitative methods into reliable, scalable systems for brain imaging. We combine grounded machine learning, expert oversight, and industrialized infrastructure to maximize the scientific and clinical value of imaging data.
       </p>
     </div>
   </div>
@@ -104,10 +109,10 @@
 </main>
 
 <footer>
-  © 2026 ANTsX Inc. · 
-  <a href="about.html">About</a> · 
-  <a href="contact.html">Inquiries</a> · 
-  <a href="long.html">Approach</a> · 
+  © 2026 ANTsX Inc. ·
+  <a href="about.html">About</a> ·
+  <a href="contact.html">Inquiries</a> ·
+  <a href="long.html">Approach</a> ·
   <a href="publications.html">Publications</a>
 </footer>
 
@@ -124,22 +129,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const blocks = document.querySelectorAll('.thought-block');
   blocks.forEach(block => {
-    block.addEventListener('click', function(e) {
+    block.addEventListener('click', function() {
       this.classList.toggle('active');
       const icon = this.querySelector('.toggle-icon');
-      if (this.classList.contains('active')) {
-        icon.innerText = "[-]";
-      } else {
-        icon.innerText = "[+]";
-      }
+      icon.innerText = this.classList.contains('active') ? "[-]" : "[+]";
     });
   });
 
   const links = document.querySelectorAll('.sentence-trigger a, .expansion-content a');
   links.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.stopPropagation();
-    });
+    link.addEventListener('click', (e) => e.stopPropagation());
   });
 });
 </script>

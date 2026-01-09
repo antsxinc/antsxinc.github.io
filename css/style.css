@@ -159,3 +159,51 @@ a:hover {
   font-size: 0.9rem;
   font-weight: bold;
 }
+
+
+/* ---------- Citation Tooltips ---------- */
+
+.cite {
+  position: relative;
+  cursor: help;
+  font-weight: bold;
+}
+
+.cite::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+
+  background: var(--heading);
+  color: var(--bg);
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+}
+
+.cite::before {
+  content: "";
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--heading) transparent transparent transparent;
+
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cite:hover::after,
+.cite:hover::before {
+  opacity: 1;
+}
