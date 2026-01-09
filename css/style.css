@@ -4,18 +4,18 @@
   --bg: #ffffff;
   --text: #222;
   --heading: #000;
-  --link-bg: #fff3a0;  /* warm yellow highlight */
-  --link-text: #000;   /* ink on yellow */
+  --link-bg: #fff3a0; /* warm yellow highlight */
+  --link-text: #000; /* ink on yellow */
   --border: #ddd;
-  --dim-text: #666;    /* For non-highlighted trigger text */
+  --dim-text: #666;  /* For non-highlighted trigger text */
 }
 
 body.dark {
-  --bg: #000000;
+  --bg: #0b0b0b;
   --text: #e6e6e6;
   --heading: #ffffff;
-  --link-bg: #3b1c5a;  /* deep purple highlight */
-  --link-text: #f5e663; /* warm yellow ink */
+  --link-bg: #4a2875; /* deep purple highlight */
+  --link-text: #fff; 
   --border: #333;
   --dim-text: #aaa;
 }
@@ -28,26 +28,50 @@ body {
   color: var(--text);
   max-width: 900px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 40px 20px;
   line-height: 1.6;
   transition: background 0.3s, color 0.3s;
 }
 
-h1, h2 {
+h1, h2, h3 {
   color: var(--heading);
 }
 
 h2 {
   text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
   border-bottom: 1px solid var(--border);
-  padding-bottom: 8px;
+  padding-bottom: 10px;
+  margin-top: 3rem;
 }
+
+/* ---------- Header & Logo ---------- */
 
 header {
   border-bottom: 3px solid var(--heading);
   padding-bottom: 20px;
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo-container {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+header p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
 }
 
 footer {
@@ -61,15 +85,16 @@ footer {
 /* ---------- Links ---------- */
 
 a {
-  color: var(--link-text);
-  background: var(--link-bg);
-  padding: 0 3px;
+  color: var(--heading);
   text-decoration: none;
-  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
 }
 
 a:hover {
-  opacity: 0.85;
+  background: var(--link-bg);
+  color: var(--link-text);
+  border-bottom: none;
 }
 
 /* ---------- Utility ---------- */
@@ -78,10 +103,11 @@ a:hover {
   position: fixed;
   top: 20px;
   right: 20px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
   cursor: pointer;
   border: 1px solid var(--border);
-  padding: 6px 10px;
+  padding: 6px 12px;
   background: var(--bg);
   color: var(--text);
   z-index: 100;
@@ -97,39 +123,33 @@ a:hover {
 .thought-block {
   margin-bottom: 2.5rem;
   border-left: 3px solid transparent;
-  padding-left: 0;
-  transition: border-left-color 0.3s, padding-left 0.3s;
+  padding-left: 15px;
+  transition: border-left-color 0.3s;
+}
+
+.thought-block:hover {
+  border-left-color: var(--border);
 }
 
 .thought-block.active {
   border-left-color: var(--heading);
-  padding-left: 20px;
 }
 
-/* The clickable main sentence */
 .sentence-trigger {
-  font-size: 1.5rem;
-  font-weight: 300; /* Light Helvetica weight */
+  font-size: 1.6rem;
+  font-weight: 300; 
   cursor: pointer;
-  line-height: 1.4;
+  line-height: 1.3;
   color: var(--text);
 }
 
-.sentence-trigger:hover {
-  color: var(--heading);
+.sentence-trigger strong {
+  font-weight: 600;
+  border-bottom: 2px solid var(--link-bg);
 }
 
-/* The specific highlighted link within the sentence */
-.sentence-trigger a {
-  position: relative;
-  z-index: 10;
-  font-weight: 400; /* Slightly bolder than the sentence text */
-  background: var(--link-bg); /* Ensure it keeps your yellow/purple highlight */
-}
-
-/* The [+] icon */
 .toggle-icon {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--dim-text);
   margin-left: 10px;
   vertical-align: middle;
@@ -137,19 +157,18 @@ a:hover {
   font-family: monospace;
 }
 
-/* The hidden detailed paragraph */
 .expansion-content {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s, margin-top 0.3s;
-  font-size: 1rem;
+  transition: all 0.4s ease;
+  font-size: 1.05rem;
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .thought-block.active .expansion-content {
-  max-height: 500px; /* High enough to fit content */
+  max-height: 600px; 
   opacity: 1;
   margin-top: 1.5rem;
 }
@@ -158,52 +177,27 @@ a:hover {
   margin-top: 1rem;
   font-size: 0.9rem;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
+/* ---------- Comparison Table (About Page) ---------- */
 
-/* ---------- Citation Tooltips ---------- */
-
-.cite {
-  position: relative;
-  cursor: help;
-  font-weight: bold;
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
 }
 
-.cite::after {
-  content: attr(data-title);
-  position: absolute;
-  bottom: 130%;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
+.comparison-table th, .comparison-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 15px;
+  text-align: left;
+}
 
-  background: var(--heading);
-  color: var(--bg);
-  padding: 6px 10px;
+.comparison-table th {
+  text-transform: uppercase;
   font-size: 0.75rem;
-  border-radius: 4px;
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: 1000;
-}
-
-.cite::before {
-  content: "";
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: var(--heading) transparent transparent transparent;
-
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.cite:hover::after,
-.cite:hover::before {
-  opacity: 1;
+  color: var(--dim-text);
 }

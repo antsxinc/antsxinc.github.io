@@ -1,102 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ANTsX | Contact</title>
-  <link rel="stylesheet" href="css/style.css">
+ <meta charset="UTF-8">
+ <title>ANTsX | Contact</title>
+ <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <script>
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark');
-  }
+ if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+ }
 </script>
 
 <div class="toggle" id="theme-toggle">
-  toggle dark / light
+ theme
 </div>
 
 <header>
-  <h1>Contact & Updates</h1>
-  <p><a href="index.html">← back to ANTsX</a></p>
+ <div class="logo-container" style="width: 150px;">
+  <img id="logo-img" src="images/logo_light.svg" alt="ANTsX Inc." />
+ </div>
+ <p><a href="index.html">← back to Home</a></p>
 </header>
 
 <section>
-  <h2>Request Information</h2>
+ <h2>Partner with ANTsX Inc.</h2>
 
-  <p>
-    ANTsX Inc. engages with academic groups, research consortia, and organizations
-    seeking rigorously validated imaging and analysis systems.
-  </p>
+ <p>
+  We engage with organizations seeking rigorously validated imaging analysis systems.
+ </p>
+ 
+ <ul>
+    <li><strong>Commercial Licensing:</strong> For integration into medical devices or proprietary software.</li>
+    <li><strong>SaaS Deployments:</strong> For clinical trials and large-cohort studies.</li>
+    <li><strong>Consulting:</strong> For custom pipeline development and validation.</li>
+ </ul>
 
-  <p>
-    For inquiries related to collaborations, supported deployments, or future updates,
-    please contact:
-  </p>
-
-  <p>
-    <strong>Email:</strong><br>
-    <a href="mailto:antsx@antsx.com">antsx@antsx.com</a>
-  </p>
-</section>
-
-<section>
-  <h2>Subscribe for Updates (Optional)</h2>
-
-  <p>
-    If you would like to receive occasional updates about releases, publications,
-    or availability of supported systems, you may subscribe below.
-    Communications will be infrequent and technically focused.
-  </p>
-
-  <form action="https://formspree.io/f/mjgknzdr" method="POST">
-    <input
-      type="email"
-      name="email"
-      placeholder="Email address"
-      required
-    >
-    <input type="hidden" name="source" value="antsx.com">
-    <button type="submit">Subscribe</button>
-  </form>
-
-  <p style="font-size:0.8rem; color:#666;">
-  We use your email only to share information about ANTsX.
-  Unsubscribe at any time.
-  </p>
-
-  <input type="text" name="_gotcha" style="display:none">
-
-  <p style="font-size:0.85em; color:#666;">
-  Subscription functionality is in beta mode.
-  </p>
-
-  <p style="margin-top:1rem; font-size:0.9em;">
-    We respect privacy and do not share contact information.
-  </p>
+ <p>
+  <strong>Email:</strong><br>
+  <a href="mailto:antsx@antsx.com">antsx@antsx.com</a>
+ </p>
 </section>
 
 <footer>
-  © 2026 ANTsX Inc. ·
-  <a href="about.html">About</a> ·
-  <a href="contact.html">Inquiries</a> ·
-  <a href="long.html">Approach</a> ·
-  <a href="publications.html">Publications</a>
+ © 2026 ANTsX Inc. ·
+ <a href="about.html">Business Model</a> ·
+ <a href="long.html">Technology</a> ·
+ <a href="publications.html">Research</a> ·
+ <a href="contact.html">Contact</a>
 </footer>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const themeBtn = document.getElementById('theme-toggle');
-    if (themeBtn) {
-      themeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark');
-        const isDark = document.body.classList.contains('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      });
-    }
-  });
+ document.addEventListener("DOMContentLoaded", () => {
+  const themeBtn = document.getElementById("theme-toggle");
+  const logoImg = document.getElementById("logo-img");
+
+  const updateLogo = (isDark) => {
+   if (logoImg) {
+    logoImg.src = isDark ? "images/logo_dark.svg" : "images/logo_light.svg";
+   }
+  };
+
+  if (document.body.classList.contains("dark")) {
+   updateLogo(true);
+  }
+
+  if (themeBtn) {
+   themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    updateLogo(isDark);
+   });
+  }
+ });
 </script>
 
 </body>

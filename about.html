@@ -1,91 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ANTsX | About</title>
-  <link rel="stylesheet" href="css/style.css">
+ <meta charset="UTF-8">
+ <title>ANTsX | Business Model</title>
+ <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <script>
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark');
-  }
+ if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+ }
 </script>
 
 <div class="toggle" id="theme-toggle">
-  toggle dark / light
+ theme
 </div>
 
 <header>
-  <h1>About ANTsX</h1>
-  <p><a href="index.html">← back to ANTsX</a></p>
+ <div class="logo-container" style="width: 150px;">
+  <img id="logo-img" src="images/logo_light.svg" alt="ANTsX Inc." />
+ </div>
+ <p><a href="index.html">← back to Home</a></p>
 </header>
 
 <section>
-  <h2>Open Science and Commercial Practice</h2>
+ <h2>The Open Core Model</h2>
 
-  <p>
-    The <strong>ANTsX</strong> GitHub organization
-    (<a href="https://github.com/ANTsX/" target="_blank" rel="noopener">https://github.com/ANTsX/</a>)
-    hosts a long-standing, community-driven open-source ecosystem for quantitative biological and medical imaging.
-    These tools have been developed, validated, and refined over many years by an international research community
-    and are widely used in academic and translational research.
-  </p>
+ <p>
+  The <strong>ANTsX</strong> GitHub organization hosts the world"s leading open-source ecosystem for quantitative imaging. It is the innovation engine—fluid, community-driven, and focused on academic novelty.
+ </p>
 
-  <p>
-    <strong>ANTsX Inc.</strong> is a separate commercial entity founded by original developers of the ANTsX ecosystem.
-    ANTsX Inc. preserves the independence of the open-source ANTsX ecosystem while extending it into professionally supported environments.
-  </p>
+ <p>
+  <strong>ANTsX Inc.</strong> is the commercial entity that bridges the gap between that academic innovation and industrial application. We operate on a model similar to <strong>Red Hat® relative to Linux®</strong>.
+ </p>
 
-  <p>
-    Instead, ANTsX Inc. builds upon this open scientific foundation to develop rigorously engineered systems for
-    large-scale research, clinical trials, and translational environments. These efforts focus on validated
-    pipelines, accountable deployment, regulatory-aware engineering, and long-term operational support.
-  </p>
+ <p>
+  We do not sell the open-source code. We sell the <strong>certainty, stability, and scale</strong> required to use that code in high-stakes environments like Phase III clinical trials and FDA-regulated device development.
+ </p>
 </section>
 
 <section>
-  <h2>What ANTsX Inc. Provides</h2>
+ <h2>Technical Advantage: Generality & Meaning</h2>
+ <p>
+  Why choose the ANTsX ecosystem over other tools?
+ </p>
+ <p>
+  Most neuroimaging software is over-fitted to human T1 MRI. <strong>ANTsX is Universal.</strong>
+ </p>
+ <p>
+  We employ a generalized mathematical framework capable of processing <strong>any species, any modality, and any organ system</strong>. 
+ </p>
+ <p>
+  Crucially, we do not just produce unlabeled maps. We align all data to <strong>known, established biological ontologies</strong> and further map these structures to <strong>hierarchies of function, performance, and cognition</strong>. This ensures your data is not only geometrically accurate but biologically interpretable.
+ </p>
+</section>
 
-  <p>
-    ANTsX Inc. focuses on the execution layer required to bring advanced imaging methods into sustained professional use.
-    This includes:
-  </p>
-
-  <ul>
-    <li>Curated and validated implementations of open scientific methods</li>
-    <li>Reproducible, auditable pipelines designed for scale and longitudinal stability</li>
-    <li>Grounded machine learning that links mathematically rigorous representations to biological phenotypes</li>
-    <li>Infrastructure and expertise supporting population-scale and regulatory-aligned studies</li>
-  </ul>
-
-  <p>
-    This separation allows the open-source ecosystem to remain independent and research-driven, while enabling
-    organizations to rely on professionally supported systems when required.
-  </p>
+<section>
+ <h2>Commercial vs. Community</h2>
+ <table class="comparison-table">
+  <thead>
+   <tr>
+    <th>Feature</th>
+    <th>Community (GitHub)</th>
+    <th>Commercial (ANTsX Inc.)</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td><strong>Reliability</strong></td>
+    <td>Research Grade / Best Effort</td>
+    <td><strong>Enterprise Grade / SLA-Backed</strong></td>
+   </tr>
+   <tr>
+    <td><strong>Semantics</strong></td>
+    <td>Raw Segmentation</td>
+    <td><strong>Established Ontologies & Functional Hierarchies</strong></td>
+   </tr>
+   <tr>
+    <td><strong>Scalability</strong></td>
+    <td>Local / HPC Ad-hoc</td>
+    <td><strong>Cloud-Native / Containerized</strong></td>
+   </tr>
+   <tr>
+    <td><strong>Validation</strong></td>
+    <td>Peer Review</td>
+    <td><strong>Industrial QA / Regulatory Ready</strong></td>
+   </tr>
+   <tr>
+    <td><strong>Indemnification</strong></td>
+    <td>None (MIT/Apache License)</td>
+    <td><strong>Commercial Liability Protection</strong></td>
+   </tr>
+  </tbody>
+ </table>
 </section>
 
 <footer>
-  © 2026 ANTsX Inc. ·
-  <a href="about.html">About</a> ·
-  <a href="contact.html">Inquiries</a> ·
-  <a href="long.html">Approach</a> ·
-  <a href="publications.html">Publications</a>
+ © 2026 ANTsX Inc. ·
+ <a href="about.html">Business Model</a> ·
+ <a href="long.html">Technology</a> ·
+ <a href="publications.html">Research</a> ·
+ <a href="contact.html">Contact</a>
 </footer>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const themeBtn = document.getElementById('theme-toggle');
-    if (themeBtn) {
-      themeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark');
-        const isDark = document.body.classList.contains('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      });
-    }
-  });
+ document.addEventListener("DOMContentLoaded", () => {
+  const themeBtn = document.getElementById("theme-toggle");
+  const logoImg = document.getElementById("logo-img");
+
+  const updateLogo = (isDark) => {
+   if (logoImg) {
+    logoImg.src = isDark ? "images/logo_dark.svg" : "images/logo_light.svg";
+   }
+  };
+
+  if (document.body.classList.contains("dark")) {
+   updateLogo(true);
+  }
+
+  if (themeBtn) {
+   themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    updateLogo(isDark);
+   });
+  }
+ });
 </script>
 
 </body>
