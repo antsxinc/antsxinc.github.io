@@ -20,7 +20,7 @@
 
 <header>
  <div class="logo-container" style="width: 150px;">
-  <img id="logo-img" src="images/logo_light.svg" alt="ANTsX Inc." />
+  <img id="logo-img" alt="ANTsX Inc." />
  </div>
  <p><a href="index.html">← back to Home</a></p>
 </header>
@@ -97,27 +97,21 @@
  <a href="contact.html">Contact</a>
 </footer>
 
+<!-- Import Central Branding Logic -->
+<script src="js/branding.js"></script>
+
 <script>
  document.addEventListener("DOMContentLoaded", () => {
   const themeBtn = document.getElementById("theme-toggle");
-  const logoImg = document.getElementById("logo-img");
 
-  const updateLogo = (isDark) => {
-   if (logoImg) {
-    logoImg.src = isDark ? "images/logo_dark.svg" : "images/logo_light.svg";
-   }
-  };
-
-  if (document.body.classList.contains("dark")) {
-   updateLogo(true);
-  }
+  applyANTsXBranding();
 
   if (themeBtn) {
    themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     const isDark = document.body.classList.contains("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
-    updateLogo(isDark);
+    applyANTsXBranding();
    });
   }
  });
