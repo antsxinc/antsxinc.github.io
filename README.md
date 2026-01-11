@@ -1,4 +1,3 @@
-# antsxinc.github.io
+# ANTsX Inc
 
-Enterprise-grade neuroimaging analytics built on the open-source ANTsX ecosystem.
-
+ANTsX Inc. develops quantitative imaging systems designed to operate reliably across heterogeneous data, modalities, species, and organ systems. Built on a mathematically general framework, the platform integrates validated priors, automated quality control, and population-scale execution infrastructure to support reproducible analysis in research, clinical, and regulated environments. The focus is not task-specific optimization, but principled generalization, interpretability, and measurable reliability at scale.

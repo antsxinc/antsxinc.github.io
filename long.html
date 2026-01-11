@@ -1,120 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <title>ANTsX | Technology</title>
- <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>ANTsX | Technology</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <script>
- if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
- }
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
 </script>
 
 <div class="toggle" id="theme-toggle">
- theme
+  theme
 </div>
 
 <header>
- <div class="logo-container" style="width: 150px;">
-  <img id="logo-img" alt="ANTsX Inc." />
- </div>
- <p><a href="index.html">← back to Home</a></p>
+  <div class="logo-container" style="width: 150px;">
+    <img id="logo-img" alt="ANTsX Inc." />
+  </div>
+  <p><a href="index.html">← back to Home</a></p>
 </header>
 
 <section>
- <h2>Overview</h2>
- <p>
-  ANTsX Inc. provides the <strong>industrialized execution layer</strong> for the ANTsX ecosystem. We translate academically validated methods into production-grade systems designed for population-scale research and clinical trials.
- </p>
+  <h2>The Methodology</h2>
+  <p>
+    Our methodology is designed to solve foundational problems in quantitative biomedical imaging by explicitly identifying and encoding the prior knowledge required for generalization.
+  </p>
 </section>
 
-<section id="efficiency">
- <h2>1. Validated Infrastructure & Compute</h2>
- <p>
-  To support enterprise needs, we wrap the open-source core in a layer of operational rigor:
- </p>
- <ul>
-  <li><strong>Cloud-Native Scale:</strong> Headless, containerized pipelines refactored for rapid, parallel execution on AWS, Azure, or Google Cloud.</li>
-  <li><strong>Proprietary Evaluation:</strong> Access to proprietary datasets allows us to benchmark performance against "gold standard" priors that open-source tools cannot access.</li>
-  <li><strong>Active QA/QC:</strong> Intelligent agents and trained models monitor data ingress/egress, flagging anomalies and ensuring topological validity at scale.</li>
- </ul>
+<section id="foundation">
+  <h2>Foundational Modeling</h2>
+  <p>
+    We construct systems around mathematically general representations that span 2D, 3D, and 4D imaging data. These representations enable consistent handling of diverse modalities without task-specific re-engineering.
+  </p>
+  <p>
+    This approach allows rapid customization for new domains while preserving stability, interpretability, and reproducibility.
+  </p>
 </section>
 
-<section id="ide">
- <h2>2. The ANTsX IDE + LLM</h2>
- <h3>Encoding Expert Knowledge</h3>
- <p>
-  Complex imaging analysis requires deep expertise to configure correctly. We have built a <strong>Proprietary Integrated Development Environment (IDE)</strong> augmented by a domain-specific Large Language Model.
- </p>
- <p>
-  This system encodes the tacit knowledge of the original ANTsX developers regarding <strong>image processing and neuroscience</strong>. It does not just write code; it suggests optimal registration parameters, flags likely artifacts based on metadata, and provides "semantic debugging" for biological inconsistencies.
- </p>
+<section id="qa">
+  <h2>AI + Human-in-the-Loop Engineering</h2>
+  <p>
+    Automated inference alone is insufficient for high-stakes biomedical applications. Our pipelines integrate AI-driven processing with quantitative QA/QC agents and expert human review.
+  </p>
+  <p>
+    Custom ground-truth data—generalizable across species and modalities—anchors this process, ensuring measurable reliability rather than assumed correctness.
+  </p>
 </section>
 
-<section id="universal">
- <h2>3. The Universal Framework</h2>
- <p>
-  Our distinct technical advantage lies in the mathematical generality of the ANTsX core. Unlike competitors optimized solely for human brain MRI, our framework is <strong>species and modality agnostic</strong>.
- </p>
- 
- <h3>Any Species (Pre-clinical to Clinical)</h3>
- <p>
-  We enable seamless translation of biomarkers from animal models to human trials. The same mathematical rigor applied to a mouse brain is applied to a human brain, reducing the "translation gap" in pharmaceutical R&D.
- </p>
-
- <h3>Any Modality (Micro to Macro)</h3>
- <p>
-  Our diffeomorphic registration engine unifies data across scales, capable of registering histological microscopy with macroscopic MRI/CT. This provides a "Unified Biological Coordinate System."
- </p>
-</section>
-
-<section id="interpretation">
- <h2>4. Semantic Labeling & Cognition</h2>
- <p>
-  Raw pixel processing is insufficient for modern analytics. We provide deep semantic labeling:
- </p>
- 
- <h3>Established Ontologies</h3>
- <p>
-  We map every anatomical structure to <strong>known, established biological ontologies</strong>. This ensures that our output is not just a collection of files, but a structured database fully interoperable with global research standards.
- </p>
-
- <h3>Hierarchies of Function & Cognition</h3>
- <p>
-  We go beyond anatomy. Using advanced joint modeling, we map structural phenotypes to <strong>hierarchies of function, performance, and cognition</strong>. This allows us to link specific anatomical changes directly to behavioral outcomes, providing richer endpoints for clinical trials.
- </p>
+<section id="oss">
+  <h2>Open Science, Extended</h2>
+  <p>
+    All core methodology is derived from the open-source ANTsX ecosystem, grounded in decades of peer-reviewed research.
+  </p>
+  <p>
+    For enterprise deployment, we extend this foundation with enforced provenance, versioning, security controls, privacy guarantees, and population-scale execution infrastructure—without compromising scientific transparency.
+  </p>
 </section>
 
 <footer>
- © 2026 ANTsX Inc. ·
- <a href="about.html">Business Model</a> ·
- <a href="long.html">Technology</a> ·
- <a href="publications.html">Research</a> ·
- <a href="contact.html">Contact</a>
+  © 2026 ANTsX Inc. ·
+  <a href="about.html">Assets</a> ·
+  <a href="long.html">Technology</a> ·
+  <a href="publications.html">Research</a> ·
+  <a href="contact.html">Contact</a>
 </footer>
 
-<!-- Import Central Branding Logic -->
 <script src="js/branding.js"></script>
 
 <script>
- document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const themeBtn = document.getElementById("theme-toggle");
 
   applyANTsXBranding();
 
   if (themeBtn) {
-   themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    const isDark = document.body.classList.contains("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    applyANTsXBranding();
-   });
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const isDark = document.body.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      applyANTsXBranding();
+    });
   }
- });
+});
 </script>
 
 </body>

@@ -7,7 +7,7 @@
   --link-bg: #fff3a0; /* warm yellow highlight */
   --link-text: #000; /* ink on yellow */
   --border: #ddd;
-  --dim-text: #666;  /* For non-highlighted trigger text */
+  --dim-text: #666; /* For non-highlighted trigger text */
 }
 
 body.dark {

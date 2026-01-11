@@ -1,110 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <title>ANTsX | Commercial Assets</title>
- <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>ANTsX Inc. | Principled Imaging Intelligence</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <script>
- if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
- }
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
 </script>
 
 <div class="toggle" id="theme-toggle">
- theme
+  theme
 </div>
 
 <header>
- <div class="logo-container" style="width: 150px;">
-  <img id="logo-img" alt="ANTsX Inc." />
- </div>
- <p><a href="index.html">← back to Home</a></p>
+  <div class="logo-container">
+    <img id="logo-img" alt="ANTsX Inc." />
+  </div>
+  <p><strong>Foundational Imaging Intelligence. Reliable at Scale.</strong></p>
 </header>
 
-<section>
- <h2>The Open Core Model</h2>
- <p>
-  <strong>ANTsX Inc.</strong> bridges the gap between academic innovation and industrial application. While we support the open-source ecosystem, our commercial value is built on a <strong>proprietary stack</strong> of assets unavailable in the public domain.
- </p>
-</section>
+<main class="manifesto-container">
 
-<section id="moat">
- <h2>The Proprietary Stack</h2>
- <p>Our commercial platform provides four critical advantages:</p>
+  <!-- 1. THE PROBLEM -->
+  <div class="thought-block active">
+    <div class="sentence-trigger">
+      We solve <strong>foundational problems</strong> in medical imaging.
+      <span class="toggle-icon">[-]</span>
+    </div>
+    <div class="expansion-content">
+      <p>
+        Most imaging systems are built by overfitting solutions to individual tasks. We take the opposite approach. We identify and encode the core prior knowledge that makes imaging problems solvable across modalities, anatomies, species, and scales.
+      </p>
+      <p>
+        This foundation allows rapid customization to new problems without rebuilding pipelines—yielding unprecedented efficiency, scalability, and reliability of deployment.
+      </p>
+      <p class="deep-link">
+        <a href="about.html">System Assets &rarr;</a>
+      </p>
+    </div>
+  </div>
 
- <table class="comparison-table">
-  <tbody>
-   <tr>
-    <td><strong>1. Proprietary Data</strong></td>
-    <td>
-     We hold exclusive performance measurements, reference atlases and statistical priors. These assets allow our models to achieve higher fidelity and faster convergence than those trained solely on public data.
-    </td>
-   </tr>
-   <tr>
-    <td><strong>2. Evaluation Infrastructure</strong></td>
-    <td>
-     We deploy proprietary <strong>QA/QC agents</strong> and trained discriminator models. These systems automatically detect outliers, assess segmentation quality, and flag curation defects, ensuring 100% data accountability.
-    </td>
-   </tr>
-   <tr>
-    <td><strong>3. The ANTsX IDE + LLM</strong></td>
-    <td>
-     We have built an IDE augmented by a domain-specific Large Language Model. This tool <strong>encodes expert guidance</strong> and deep knowledge of both image processing and neuroscience, acting as an automated expert co-pilot for pipeline configuration.
-    </td>
-   </tr>
-   <tr>
-    <td><strong>4. Validated Distributed Computing</strong></td>
-    <td>
-     A hardened, cloud-native execution engine designed for regulatory compliance. It provides audit trails, version control, and scalable parallelization that meets the rigor required for clinical trials.
-    </td>
-   </tr>
-  </tbody>
- </table>
-</section>
+  <!-- 2. FIRST STEP -->
+  <div class="thought-block">
+    <div class="sentence-trigger">
+      First: AI encoded with <strong>decades of expertise</strong>.
+      <span class="toggle-icon">[+]</span>
+    </div>
+    <div class="expansion-content">
+      <p>
+        Our systems are not trained in isolation. They are constructed using a proprietary AI-powered development environment that encodes decades of domain expertise in quantitative biomedical imaging.
+      </p>
+      <p>
+        This allows us to derive meaningful, stable quantitative metrics from 2D, 3D, and 4D imaging data with minimal manual re-engineering.
+      </p>
+      <p class="deep-link">
+        <a href="long.html#foundation">How the system is built &rarr;</a>
+      </p>
+    </div>
+  </div>
 
-<section>
- <h2>Technical Advantage: Generality & Meaning</h2>
- <p>
-  Most neuroimaging software is over-fitted to human T1 MRI. <strong>ANTsX is Universal.</strong>
- </p>
- <p>
-  We employ a generalized mathematical framework capable of processing <strong>any species, any modality, and any organ system</strong>. 
- </p>
- <p>
-  Crucially, we do not just produce unlabeled maps. We align all data to <strong>known, established biological ontologies</strong> and further map these structures to <strong>hierarchies of function, performance, and cognition</strong>.
- </p>
-</section>
+  <!-- 3. SECOND STEP -->
+  <div class="thought-block">
+    <div class="sentence-trigger">
+      Second: <strong>AI + human-in-the-loop</strong> by design.
+      <span class="toggle-icon">[+]</span>
+    </div>
+    <div class="expansion-content">
+      <p>
+        We maintain custom ground-truth data that generalizes across imaging modalities and species. This data powers an AI + human-in-the-loop engineering process that combines automation with expert validation.
+      </p>
+      <p>
+        The result is a system that scales without sacrificing interpretability, provenance, or trust.
+      </p>
+      <p class="deep-link">
+        <a href="long.html#qa">Quality & Validation &rarr;</a>
+      </p>
+    </div>
+  </div>
+
+</main>
 
 <footer>
- © 2026 ANTsX Inc. ·
- <a href="about.html">Business Model</a> ·
- <a href="long.html">Technology</a> ·
- <a href="publications.html">Research</a> ·
- <a href="contact.html">Contact</a>
+  © 2026 ANTsX Inc. ·
+  <a href="about.html">Assets</a> ·
+  <a href="long.html">Technology</a> ·
+  <a href="publications.html">Research</a> ·
+  <a href="contact.html">Contact</a>
 </footer>
 
-<!-- Import Central Branding Logic -->
 <script src="js/branding.js"></script>
 
 <script>
- document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const themeBtn = document.getElementById("theme-toggle");
 
   applyANTsXBranding();
 
   if (themeBtn) {
-   themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    const isDark = document.body.classList.contains("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    applyANTsXBranding();
-   });
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const isDark = document.body.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      applyANTsXBranding();
+    });
   }
- });
+
+  const blocks = document.querySelectorAll(".thought-block");
+  blocks.forEach(block => {
+    block.addEventListener("click", function(e) {
+      if (e.target.tagName === "A") return;
+      this.classList.toggle("active");
+      const icon = this.querySelector(".toggle-icon");
+      icon.innerText = this.classList.contains("active") ? "[-]" : "[+]";
+    });
+  });
+});
 </script>
 
 </body>

@@ -1,75 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <title>ANTsX | Contact</title>
- <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>ANTsX | Contact</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <script>
- if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
- }
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
 </script>
 
 <div class="toggle" id="theme-toggle">
- theme
+  theme
 </div>
 
 <header>
- <div class="logo-container" style="width: 150px;">
-  <img id="logo-img" alt="ANTsX Inc." />
- </div>
- <p><a href="index.html">← back to Home</a></p>
+  <div class="logo-container" style="width: 150px;">
+    <img id="logo-img" alt="ANTsX Inc." />
+  </div>
+  <p><a href="index.html">← back to Home</a></p>
 </header>
 
 <section>
- <h2>Partner with ANTsX Inc.</h2>
+  <h2>Engage</h2>
 
- <p>
-  We engage with organizations seeking rigorously validated imaging analysis systems.
- </p>
- 
- <ul>
-    <li><strong>Commercial Licensing:</strong> For integration into medical devices or proprietary software.</li>
-    <li><strong>SaaS Deployments:</strong> For clinical trials and large-cohort studies.</li>
-    <li><strong>Consulting:</strong> For custom pipeline development, benchmarking and validation.</li>
- </ul>
+  <p>
+    We partner with organizations requiring rigorously validated imaging analysis systems.
+  </p>
+  
+  <ul>
+   <li><strong>Commercial Licensing:</strong> Integration into medical devices or proprietary software.</li>
+   <li><strong>SaaS Deployments:</strong> Population-scale processing for clinical trials.</li>
+   <li><strong>Validation Services:</strong> Benchmarking and custom pipeline development.</li>
+  </ul>
 
- <p>
-  <strong>Email:</strong><br>
-  <a href="mailto:antsx@antsx.com">antsx@antsx.com</a>
- </p>
+  <p>
+    <strong>Email:</strong><br>
+    <a href="mailto:antsx@antsx.com">antsx@antsx.com</a>
+  </p>
 </section>
 
 <footer>
- © 2026 ANTsX Inc. ·
- <a href="about.html">Business Model</a> ·
- <a href="long.html">Technology</a> ·
- <a href="publications.html">Research</a> ·
- <a href="contact.html">Contact</a>
+  © 2026 ANTsX Inc. ·
+  <a href="about.html">Assets</a> ·
+  <a href="long.html">Technology</a> ·
+  <a href="publications.html">Research</a> ·
+  <a href="contact.html">Contact</a>
 </footer>
 
 <!-- Import Central Branding Logic -->
 <script src="js/branding.js"></script>
 
 <script>
- document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
   const themeBtn = document.getElementById("theme-toggle");
 
   applyANTsXBranding();
 
   if (themeBtn) {
    themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    const isDark = document.body.classList.contains("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    applyANTsXBranding();
+   document.body.classList.toggle("dark");
+   const isDark = document.body.classList.contains("dark");
+   localStorage.setItem("theme", isDark ? "dark" : "light");
+   applyANTsXBranding();
    });
   }
- });
+  });
 </script>
 
 </body>
