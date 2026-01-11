@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ANTsX Inc. | Principled Imaging Intelligence</title>
+  <title>ANTsX | Assets</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -19,72 +19,57 @@
 </div>
 
 <header>
-  <div class="logo-container">
+  <div class="logo-container" style="width: 150px;">
     <img id="logo-img" alt="ANTsX Inc." />
   </div>
-  <p><strong>Foundational Imaging Intelligence. Reliable at Scale.</strong></p>
+  <p><a href="index.html">← back to Home</a></p>
 </header>
 
-<main class="manifesto-container">
+<section>
+  <h2>The Mission</h2>
+  <p>
+    <strong>ANTsX Inc.</strong> addresses foundational limitations in biomedical imaging systems.
+  </p>
+  <p>
+    Rather than optimizing narrowly for individual tasks, we identify and formalize the core prior knowledge that enables robust quantitative analysis across imaging modalities, dimensions (2D, 3D, 4D), species, and experimental contexts.
+  </p>
+</section>
 
-  <!-- 1. THE PROBLEM -->
-  <div class="thought-block active">
-    <div class="sentence-trigger">
-      We solve <strong>foundational problems</strong> in medical imaging.
-      <span class="toggle-icon">[-]</span>
-    </div>
-    <div class="expansion-content">
-      <p>
-        Most imaging systems are built by overfitting solutions to individual tasks. We take the opposite approach. We identify and encode the core prior knowledge that makes imaging problems solvable across modalities, anatomies, species, and scales.
-      </p>
-      <p>
-        This foundation allows rapid customization to new problems without rebuilding pipelines—yielding unprecedented efficiency, scalability, and reliability of deployment.
-      </p>
-      <p class="deep-link">
-        <a href="about.html">System Assets &rarr;</a>
-      </p>
-    </div>
-  </div>
+<section id="moat">
+  <h2>The Stack</h2>
+  <p>
+    Our platform spans the full imaging lifecycle—from curation through derivation of quantitative metrics—while remaining grounded in open scientific principles.
+  </p>
 
-  <!-- 2. FIRST STEP -->
-  <div class="thought-block">
-    <div class="sentence-trigger">
-      First: AI encoded with <strong>decades of expertise</strong>.
-      <span class="toggle-icon">[+]</span>
-    </div>
-    <div class="expansion-content">
-      <p>
-        Our systems are not trained in isolation. They are constructed using a proprietary AI-powered development environment that encodes decades of domain expertise in quantitative biomedical imaging.
-      </p>
-      <p>
-        This allows us to derive meaningful, stable quantitative metrics from 2D, 3D, and 4D imaging data with minimal manual re-engineering.
-      </p>
-      <p class="deep-link">
-        <a href="long.html#foundation">How the system is built &rarr;</a>
-      </p>
-    </div>
-  </div>
-
-  <!-- 3. SECOND STEP -->
-  <div class="thought-block">
-    <div class="sentence-trigger">
-      Second: <strong>AI + human-in-the-loop</strong> by design.
-      <span class="toggle-icon">[+]</span>
-    </div>
-    <div class="expansion-content">
-      <p>
-        We maintain custom ground-truth data that generalizes across imaging modalities and species. This data powers an AI + human-in-the-loop engineering process that combines automation with expert validation.
-      </p>
-      <p>
-        The result is a system that scales without sacrificing interpretability, provenance, or trust.
-      </p>
-      <p class="deep-link">
-        <a href="long.html#qa">Quality & Validation &rarr;</a>
-      </p>
-    </div>
-  </div>
-
-</main>
+  <table class="comparison-table">
+    <tbody>
+      <tr>
+        <td><strong>1. Foundational Priors</strong></td>
+        <td>
+          We encode mathematically general priors that allow rapid adaptation to new imaging problems without retraining entire systems. This enables unprecedented scaling efficiency across modalities and domains.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>2. Proprietary AI-Powered IDE</strong></td>
+        <td>
+          Decades of imaging expertise are encoded into a proprietary development environment that integrates algorithm design, validation, and deployment into a single system.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>3. Generalizable Ground Truth</strong></td>
+        <td>
+          We maintain custom ground-truth datasets that generalize across species and modalities, powering an AI + human-in-the-loop engineering workflow that balances automation with expert oversight.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>4. Open Science, Enterprise-Grade</strong></td>
+        <td>
+          All methodology is rooted in the open-science principia of the ANTsX OSS ecosystem, extended to meet enterprise requirements for security, privacy, provenance, stability, and population-scale execution.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
 <footer>
   © 2026 ANTsX Inc. ·
@@ -110,16 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
       applyANTsXBranding();
     });
   }
-
-  const blocks = document.querySelectorAll(".thought-block");
-  blocks.forEach(block => {
-    block.addEventListener("click", function(e) {
-      if (e.target.tagName === "A") return;
-      this.classList.toggle("active");
-      const icon = this.querySelector(".toggle-icon");
-      icon.innerText = this.classList.contains("active") ? "[-]" : "[+]";
-    });
-  });
 });
 </script>
 
