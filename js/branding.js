@@ -11,8 +11,8 @@ const BRANDS = {
 
   // Option 2: The Wordmark / Ant Logo
   wordmark: {
-   light: "images/antsx_ant_word_light.svg",
-   dark: "images/antsx_ant_word_dark.svg"
+   light: "images/antsx_ant_word_light2.svg",
+   dark: "images/antsx_ant_word_dark2.svg"
   }
 };
 
